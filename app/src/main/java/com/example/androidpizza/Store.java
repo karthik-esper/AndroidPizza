@@ -22,7 +22,10 @@ public class Store {
      * gets the instance of the store.
      * @return instance of Store;
      */
-    public static Store getInstance() {
+    public static synchronized Store getInstance() {
+        if (instance != null) {
+            instance = new Store();
+        }
         return instance;
     }
 
