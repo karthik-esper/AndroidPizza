@@ -1,5 +1,31 @@
 <resources>
+
     <string name="app_name">AndroidPizza</string>
+
+    <string name="welcome">Welcome to RU Pizza!</string>
+    <string name="specialty">Specialty Pizza</string>
+    <string name="byo">Build Your Own Pizza</string>
+    <string name="history">View Order History</string>
+    <string name="currorder">View Current Order</string>
+
+    <string name="pizza_size">Select Pizza Size!</string>
+    <string name="ex_sauce">Extra Sauce</string>
+    <string name="ex_cheese">Extra Cheese</string>
+    <string name="pizza_button">Create Pizza</string>
+    <string name="price">Price: </string>
+    <string name="extra">Extra Attributes </string>
+
+    <string name="ordernum">Order Number:</string>
+    <string name="tprice">Total Price:</string>
+    <string name="tax">Tax:</string>
+    <string name="oprice">Order Price:</string>
+    <string name="dpizza">Delete Pizza</string>
+    <string name="place">Place Order </string>
+
+
+
+    <string name="delete">Delete Order</string>
+
     <string-array name="spinner_sizes">
         <item>Small</item>
         <item>Medium</item>

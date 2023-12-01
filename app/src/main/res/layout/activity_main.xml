@@ -10,7 +10,7 @@
         android:id="@+id/helloWorldText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to RU Pizza!"
+        android:text="@string/welcome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,14 +30,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Specialty Pizza" />
+            android:text="@string/specialty"
+            style="@style/Widget.AppCompat.Button.Borderless"/>
 
         <Button
             android:id="@+id/buildButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Build Your Own Pizza" />
+            android:text="@string/byo"
+            style="@style/Widget.AppCompat.Button.Borderless"/>
     </LinearLayout>
 
     <LinearLayout
@@ -55,14 +57,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="View Order History" />
+            android:text="@string/history"
+            style="@style/Widget.AppCompat.Button.Borderless" />
 
         <Button
             android:id="@+id/viewCurrentOrderButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="View Current Order" />
+            android:text="@string/currorder"
+            style="@style/Widget.AppCompat.Button.Borderless"/>
     </LinearLayout>
 
     <FrameLayout
