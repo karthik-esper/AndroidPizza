@@ -23,9 +23,6 @@ public class Store {
      * @return instance of Store;
      */
     public static synchronized Store getInstance() {
-        if (instance != null) {
-            instance = new Store();
-        }
         return instance;
     }
 
