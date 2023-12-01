@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AndroidPizza</string>
+    <string-array name="spinner_sizes">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
 </resources>
