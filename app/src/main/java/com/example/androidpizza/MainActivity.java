@@ -25,15 +25,14 @@ public class MainActivity extends AppCompatActivity {
         Specialty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                showFragment();
+                openSpecialtyFragment();
             }
         });
     }
 
-    private void showFragment(Fragment fragment) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ftran = fm.beginTransaction();
-        ftran.replace(R.id.frameLayout, fragment);
-        ftran.commit();
+    private void openSpecialtyFragment() {
+        specialtyFragment specialtyView = new specialtyFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, specialtyView)
+                        .addToBackStack(null).commit();
     }
 }

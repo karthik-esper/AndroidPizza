@@ -8,66 +8,61 @@
 
     <TextView
         android:id="@+id/helloWorldText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="197dp"
+        android:layout_height="42dp"
         android:text="@string/welcome"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/buttonsLayoutTop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/helloWorldText"
-        tools:layout_editor_absoluteX="0dp">
+    <Button
+        android:id="@+id/specialtyButton"
+        android:layout_width="180dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="56dp"
+        android:layout_weight="1"
+        android:text="@string/specialty"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/specialtyButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/specialty"
-            style="@style/Widget.AppCompat.Button.Borderless"/>
+    <Button
+        android:id="@+id/buildButton"
+        android:layout_width="184dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="56dp"
+        android:layout_weight="1"
+        android:text="@string/byo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/buildButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/byo"
-            style="@style/Widget.AppCompat.Button.Borderless"/>
-    </LinearLayout>
+    <Button
+        android:id="@+id/viewOrderHistoryButton"
+        android:layout_width="180dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="580dp"
+        android:layout_weight="1"
+        android:text="@string/history"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/buttonsLayoutBottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="468dp"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/buttonsLayoutTop"
-        tools:layout_editor_absoluteX="0dp">
-
-        <Button
-            android:id="@+id/viewOrderHistoryButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/history"
-            style="@style/Widget.AppCompat.Button.Borderless" />
-
-        <Button
-            android:id="@+id/viewCurrentOrderButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/currorder"
-            style="@style/Widget.AppCompat.Button.Borderless"/>
-    </LinearLayout>
+    <Button
+        android:id="@+id/viewCurrentOrderButton"
+        android:layout_width="180dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="580dp"
+        android:layout_weight="1"
+        android:text="@string/currorder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
