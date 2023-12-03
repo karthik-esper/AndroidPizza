@@ -24,6 +24,16 @@ public class PizzaMaker {
                 return new Pepperoni();
             case "byop":
                 return new BuildYourOwnPizza();
+            case "spicy" :
+                return new Spicy();
+            case "hawaiian":
+                return new Hawaiian();
+            case "sussy":
+                return new Sussy();
+            case "veggie":
+                return new Veggie();
+            case "surfturf":
+                return new SurfTurf();
             default:
                 return null;
         }

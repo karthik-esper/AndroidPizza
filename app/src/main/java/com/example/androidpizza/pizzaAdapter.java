@@ -24,13 +24,20 @@ public class pizzaAdapter extends RecyclerView.Adapter<pizzaAdapter.PizzaHolder>
     String[] pizzaNames;
     String[] pizzaDetails;
     int[] images;
+    private int selectedPosition = -1;
 
+    private OnItemClickListener listener;
 
-    public pizzaAdapter(Context context, String[] pizzaNames, String[] pizzaDetails, int[] images) {
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public pizzaAdapter(Context context, String[] pizzaNames, String[] pizzaDetails, int[] images, OnItemClickListener listener) {
         this.context = context;
         this.pizzaNames = pizzaNames;
         this.pizzaDetails = pizzaDetails;
         this.images = images;
+        this.listener = listener;
     }
     @Override
     public void onBindViewHolder(@NonNull pizzaAdapter.PizzaHolder holder, int position) {
@@ -43,6 +50,7 @@ public class pizzaAdapter extends RecyclerView.Adapter<pizzaAdapter.PizzaHolder>
     public int getItemCount() {
         return pizzaNames.length;
     }
+
 
     @NonNull
     @Override
@@ -65,11 +73,19 @@ public class pizzaAdapter extends RecyclerView.Adapter<pizzaAdapter.PizzaHolder>
             rowName = itemView.findViewById(R.id.textViewName);
             rowDescription = itemView.findViewById(R.id.textViewDescription);
             rowImage = itemView.findViewById(R.id.imageView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null && getAdapterPosition() != RecyclerView.NO_POSITION) {
+                        selectedPosition = getAdapterPosition();
+                        listener.onItemClick(getAdapterPosition());
+                    }
+                }
+            });
         }
 
 
-
     }
-
 
 }

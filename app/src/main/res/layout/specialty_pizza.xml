@@ -60,7 +60,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/extraSauce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/extraCheese"
         android:layout_width="126dp"
         android:layout_height="51dp"
@@ -83,7 +83,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/PizzaButton"
         android:layout_width="184dp"
         android:layout_height="63dp"
         android:layout_marginTop="452dp"
@@ -94,7 +94,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/Price"
         android:layout_width="144dp"
         android:layout_height="39dp"
         android:layout_marginTop="452dp"
