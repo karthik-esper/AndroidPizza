@@ -35,4 +35,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, specialtyView)
                         .addToBackStack(null).commit();
     }
+//    private void openOrderFragment() {
+//
+//    }
 }

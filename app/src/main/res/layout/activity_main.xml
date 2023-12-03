@@ -44,7 +44,7 @@
         android:id="@+id/viewOrderHistoryButton"
         android:layout_width="180dp"
         android:layout_height="48dp"
-        android:layout_marginTop="580dp"
+        android:layout_marginTop="600dp"
         android:layout_weight="1"
         android:text="@string/history"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,21 +56,21 @@
         android:id="@+id/viewCurrentOrderButton"
         android:layout_width="180dp"
         android:layout_height="48dp"
-        android:layout_marginTop="580dp"
+        android:layout_marginTop="600dp"
         android:layout_weight="1"
         android:text="@string/currorder"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
-        android:layout_width="411dp"
-        android:layout_height="453dp"
-        android:layout_marginTop="112dp"
+        android:layout_width="384dp"
+        android:layout_height="461dp"
+        android:layout_marginTop="124dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></FrameLayout>
 

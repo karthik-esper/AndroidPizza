@@ -14,6 +14,7 @@
     <string name="pizza_button">Create Pizza</string>
     <string name="price">Price: </string>
     <string name="extra">Extra Attributes </string>
+    <string name="toppings"> Toppings</string>
 
     <string name="ordernum">Order Number:</string>
     <string name="tprice">Total Price:</string>

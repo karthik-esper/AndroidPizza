@@ -18,8 +18,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myRecyclerView"
-        android:layout_width="208dp"
-        android:layout_height="344dp"
+        android:layout_width="204dp"
+        android:layout_height="179dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.6"
@@ -28,6 +28,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.02"
         app:layout_constraintWidth_percent="0.6" />
+
+    <ListView
+        android:id="@+id/Toppings"
+        android:layout_width="150dp"
+        android:layout_height="202dp"
+        android:layout_marginTop="228dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/myRecyclerView" />
+
+    <TextView
+        android:id="@+id/ToppingLabel"
+        android:layout_width="131dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="200dp"
+        android:text="@string/toppings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/mySpinner"
@@ -76,7 +97,7 @@
         android:id="@+id/button"
         android:layout_width="184dp"
         android:layout_height="63dp"
-        android:layout_marginTop="388dp"
+        android:layout_marginTop="428dp"
         android:text="@string/pizza_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.881"
@@ -87,10 +108,10 @@
         android:id="@+id/textView3"
         android:layout_width="144dp"
         android:layout_height="39dp"
-        android:layout_marginTop="392dp"
+        android:layout_marginTop="452dp"
         android:text="@string/price"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
