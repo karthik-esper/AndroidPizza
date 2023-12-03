@@ -14,6 +14,8 @@ import android.widget.ArrayAdapter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -60,6 +62,8 @@ public class specialtyFragment extends Fragment {
     private void setPizzaChoices(View view) {
         recyclerPizzaView = view.findViewById(R.id.myRecyclerView);
         recyclerPizzaView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerPizzaView.setItemAnimator(new DefaultItemAnimator());
+        recyclerPizzaView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
         pizzaAdapter = new pizzaAdapter(getContext(), pizzaNames, pizzaDetails, pizzaImages);
         recyclerPizzaView.setAdapter(pizzaAdapter);
     }
