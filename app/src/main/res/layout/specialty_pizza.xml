@@ -5,37 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="131dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="208dp"
-        android:text="@string/extra"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.903"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myRecyclerView"
         android:layout_width="204dp"
-        android:layout_height="179dp"
+        android:layout_height="417dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.6"
-        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02"
+        app:layout_constraintVertical_bias="0.028"
         app:layout_constraintWidth_percent="0.6" />
 
     <ListView
         android:id="@+id/Toppings"
         android:layout_width="150dp"
         android:layout_height="202dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="236dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.896"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/myRecyclerView" />
 
@@ -43,10 +32,10 @@
         android:id="@+id/ToppingLabel"
         android:layout_width="131dp"
         android:layout_height="31dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="216dp"
         android:text="@string/toppings"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,9 +43,9 @@
         android:id="@+id/mySpinner"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintHorizontal_bias="0.88"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,7 +53,7 @@
         android:id="@+id/textView"
         android:layout_width="131dp"
         android:layout_height="31dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:text="@string/pizza_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.903"
@@ -75,21 +64,21 @@
         android:id="@+id/extraSauce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="108dp"
         android:text="@string/ex_sauce"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintHorizontal_bias="0.827"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioButton
         android:id="@+id/extraCheese"
-        android:layout_width="131dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="308dp"
+        android:layout_width="126dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="164dp"
         android:text="@string/ex_cheese"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintHorizontal_bias="0.877"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -97,7 +86,7 @@
         android:id="@+id/button"
         android:layout_width="184dp"
         android:layout_height="63dp"
-        android:layout_marginTop="428dp"
+        android:layout_marginTop="452dp"
         android:text="@string/pizza_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.881"

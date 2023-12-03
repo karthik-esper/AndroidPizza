@@ -14,13 +14,14 @@ import android.widget.ArrayAdapter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
 public class specialtyFragment extends Fragment {
     private TextView Price;
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerPizzaView;
     private ListView Toppings;
     private Spinner sizes;
     private RadioButton extraSauce;
@@ -32,6 +33,9 @@ public class specialtyFragment extends Fragment {
 
     private final String[] pizzaNames = {"Supreme", "Deluxe", "Seafood", "Pepperoni",
             "Meatzza", "Hawaiian", "Spicy", "Veggie", "SurfTurf", "Sussy"};
+    private final String[] pizzaDetails = {"Supreme Supreme!!", "Supreme but better!", "Fishy flavor!",
+            "Good ol' Pepperoni!", "Lots of Meats!", "To annoy the Italians!", "For the Indians!",
+            "For the boring Indians!", "For those with heart!", "Gross but go ahead please!"};
 
     private final int[] pizzaImages = {R.drawable.supremepizza, R.drawable.deluxepizza, R.drawable.seafoodpizza,
             R.drawable.pepperonipizza, R.drawable.meatzzapizza, R.drawable.hawaiianpizza,
@@ -49,6 +53,14 @@ public class specialtyFragment extends Fragment {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.spinner_sizes, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+        setPizzaChoices(view);
         return view;
+    }
+
+    private void setPizzaChoices(View view) {
+        recyclerPizzaView = view.findViewById(R.id.myRecyclerView);
+        recyclerPizzaView.setLayoutManager(new LinearLayoutManager(getContext()));
+        pizzaAdapter = new pizzaAdapter(getContext(), pizzaNames, pizzaDetails, pizzaImages);
+        recyclerPizzaView.setAdapter(pizzaAdapter);
     }
 }
