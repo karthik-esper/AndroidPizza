@@ -54,7 +54,12 @@ public class orderFragment extends Fragment{
     private void initializePrices(View view) {
         orderNo = view.findViewById(R.id.orderNum);
         Order curr = Store.getInstance().getCurrentOrder();
-        orderNo.setText("Order Number: " + Store.getInstance().getOrderHistory().getNextOrder());
+        if (Store.getInstance().getOrderHistory().getNextOrder() < 1) {
+            orderNo.setText("Order Number: 1");
+        }
+        else {
+            orderNo.setText("Order Number: " + Store.getInstance().getOrderHistory().getNextOrder());
+        }
         orderPrice = view.findViewById(R.id.orderPrice);
         orderPrice.setText("Order Price: " + String.format("%.2f",curr.orderPrice()));
         orderTax = view.findViewById(R.id.taxAmt);
