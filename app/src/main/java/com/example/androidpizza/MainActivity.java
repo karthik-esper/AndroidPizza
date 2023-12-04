@@ -28,6 +28,11 @@ public class MainActivity extends AppCompatActivity {
                 openSpecialtyFragment();
             }
         });
+
+        currentOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {openOrderFragment();}
+        });
     }
 
     private void openSpecialtyFragment() {
@@ -35,7 +40,10 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, specialtyView)
                         .addToBackStack(null).commit();
     }
-//    private void openOrderFragment() {
-//
-//    }
+    private void openOrderFragment() {
+        orderFragment orderFrag = new orderFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, orderFrag)
+                .addToBackStack(null).commit();
+
+    }
 }
