@@ -40,8 +40,6 @@ public class specialtyFragment extends Fragment {
     private String selectedPizzaType;
     private String selectedPizzaSize;
 
-    private ArrayList<Topping> ToppingList = new ArrayList<Topping>();
-
     private final String[] pizzaNames = {"Supreme", "Deluxe", "Seafood", "Pepperoni",
             "Meatzza", "Hawaiian", "Spicy", "Veggie", "SurfTurf", "Sussy"};
     private final String[] pizzaDetails = {"Supreme Supreme!!", "Supreme but better!", "Fishy flavor!",
@@ -90,13 +88,26 @@ public class specialtyFragment extends Fragment {
                         if (extraSauce.isChecked()) {toMake.setExtraSauce(true);}
                         Store.getInstance().getCurrentOrder().addToOrder(toMake);
                         System.out.println(toMake.toString());
-                        Toast.makeText(getContext(), toMake.toString(), Toast.LENGTH_LONG).show();
+                        clearitems(view);
+                        Price.setText("Price: ");
+                        Toast.makeText(getContext(), "Creating Pizza", Toast.LENGTH_LONG).show();
                     }
                     else {Toast.makeText(getContext(), "size not selected", Toast.LENGTH_SHORT).show();}
                 }
                 else {Toast.makeText(getContext(), "no Pizza Type Selected", Toast.LENGTH_SHORT).show();}
             }
         });
+    }
+
+    private void clearitems(View view) {
+        extraCheese.setChecked(false);
+        extraSauce.setChecked(false);
+        extraCheese.setEnabled(false);
+        extraSauce.setEnabled(false);
+        sizes = view.findViewById(R.id.mySpinner);
+        sizes.setSelection(-1);
+        sizes.setEnabled(false);
+
     }
 
     private void setCheeseListener(View view) {
@@ -110,7 +121,7 @@ public class specialtyFragment extends Fragment {
                         toMake.setExtraSauce(true);
                     }
                     toMake.setExtraCheese(true);
-                    Price.setText(String.format("%.2f", toMake.price()));
+                    Price.setText("Price: " + String.format("%.2f", toMake.price()));
                 }
                 if (!extraCheese.isChecked()) {
                     Pizza toMake = createPizza(selectedPizzaType);
@@ -119,7 +130,7 @@ public class specialtyFragment extends Fragment {
                         toMake.setExtraSauce(true);
                     }
                     toMake.setExtraCheese(false);
-                    Price.setText(String.format("%.2f", toMake.price()));
+                    Price.setText("Price: " + String.format("%.2f", toMake.price()));
                 }
             }
         });
@@ -136,7 +147,7 @@ public class specialtyFragment extends Fragment {
                         toMake.setExtraCheese(true);
                     }
                     toMake.setExtraSauce(true);
-                    Price.setText(String.format("%.2f", toMake.price()));
+                    Price.setText("Price: " + String.format("%.2f", toMake.price()));
                 }
                 if (!extraSauce.isChecked()) {
                     Pizza toMake = createPizza(selectedPizzaType);
@@ -145,7 +156,7 @@ public class specialtyFragment extends Fragment {
                         toMake.setExtraSauce(true);
                     }
                     toMake.setExtraSauce(false);
-                    Price.setText(String.format("%.2f", toMake.price()));
+                    Price.setText("Price: " + String.format("%.2f", toMake.price()));
                 }
             }
         });
@@ -173,7 +184,7 @@ public class specialtyFragment extends Fragment {
                     sizeSelected = true;
                     extraSauce.setEnabled(true);
                     extraCheese.setEnabled(true);
-                    Price.setText(String.format("%.2f", toMake.price()));
+                    Price.setText("Price: " + String.format("%.2f", toMake.price()));
                 }
             }
 
@@ -201,12 +212,13 @@ public class specialtyFragment extends Fragment {
                         android.R.layout.simple_list_item_1, toMake.getToppings());
                 Toppings.setAdapter(adapter);
                 Price = view.findViewById(R.id.Price);
-                Price.setText(String.format("%.2f", toMake.price()));
+                Price.setText("Price: " + String.format("%.2f", toMake.price()));
                 Spinner spinner = view.findViewById(R.id.mySpinner);
                 extraSauce.setEnabled(false);
-                extraSauce.setSelected(false);
+                extraSauce.setChecked(false);
                 extraCheese.setEnabled(false);
-                extraCheese.setSelected(false);
+                extraCheese.setChecked(false);
+                sizeSelected = false;
                 spinner.setEnabled(true);
             }
         });

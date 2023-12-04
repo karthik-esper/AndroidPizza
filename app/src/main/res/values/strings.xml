@@ -8,7 +8,7 @@
     <string name="history">View Order History</string>
     <string name="currorder">View Current Order</string>
 
-    <string name="pizza_size">Select Pizza Size!</string>
+    <string name="pizza_size">Select Pizza Size! (must select type first) </string>
     <string name="ex_sauce">Extra Sauce</string>
     <string name="ex_cheese">Extra Cheese</string>
     <string name="pizza_button">Create Pizza</string>
