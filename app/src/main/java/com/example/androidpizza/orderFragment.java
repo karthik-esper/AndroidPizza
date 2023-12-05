@@ -66,5 +66,6 @@ public class orderFragment extends Fragment{
         orderTax.setText("Tax: " + String.format("%.2f", curr.orderPrice() * taxMult));
         double finalPrice = curr.orderPrice() + (curr.orderPrice() * taxMult);
         totalPrice = view.findViewById(R.id.totalPrice);
+        totalPrice.setText("Total Price: " + String.format("%.2f", finalPrice));
     }
 }
