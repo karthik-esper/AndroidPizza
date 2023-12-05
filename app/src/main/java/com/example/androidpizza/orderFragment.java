@@ -1,4 +1,5 @@
 package com.example.androidpizza;
+import android.icu.text.Transliterator;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
+import android.graphics.Color;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,6 +36,9 @@ public class orderFragment extends Fragment{
     private TextView totalPrice;
     private ListView orderItems;
 
+    private View selectedView = null;
+    private int selectedPosition = -1;
+
     public orderFragment () {
 
     }
@@ -47,8 +52,43 @@ public class orderFragment extends Fragment{
         ArrayAdapter<Pizza> adapter = new ArrayAdapter<>(getContext(),
                 android.R.layout.simple_list_item_1, curr.getOrderItems());
         orderItems.setAdapter(adapter);
+        createListListener(view);
         initializePrices(view);
         return view;
+    }
+
+    private void createListListener(View view) {
+        orderItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Check if the same view is clicked again
+                if (selectedPosition == position) {
+                    // If clicked again, toggle its state
+                    boolean isSelected = view.getTag() != null && (boolean) view.getTag();
+                    if (isSelected) {
+                        view.setBackgroundColor(Color.TRANSPARENT); // or any default color
+                        view.setTag(false); // Update tag to reflect unselected state
+                        selectedPosition = -1;
+                    } else {
+                        view.setBackgroundColor(Color.YELLOW); // Highlight color
+                        view.setTag(true); // Update tag to reflect selected state
+                        selectedPosition = position;
+                    }
+                } else {
+                    // For a new selection
+                    if (selectedView != null) {
+                        selectedView.setBackgroundColor(Color.TRANSPARENT); // Reset previous selection
+                        selectedView.setTag(false); // Update tag of previous view
+                    }
+                    view.setBackgroundColor(Color.YELLOW); // Highlight new selection
+                    view.setTag(true); // Update tag of new view
+
+                    // Update reference to the new selection
+                    selectedView = view;
+                    selectedPosition = position;
+                }
+            }
+        });
     }
 
     private void initializePrices(View view) {
@@ -56,6 +96,7 @@ public class orderFragment extends Fragment{
         Order curr = Store.getInstance().getCurrentOrder();
         if (Store.getInstance().getOrderHistory().getNextOrder() < 1) {
             orderNo.setText("Order Number: 1");
+
         }
         else {
             orderNo.setText("Order Number: " + Store.getInstance().getOrderHistory().getNextOrder());
