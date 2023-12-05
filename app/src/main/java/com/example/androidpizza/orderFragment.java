@@ -80,9 +80,10 @@ public class orderFragment extends Fragment{
                             android.R.layout.simple_list_item_1, Store.getInstance()
                             .getCurrentOrder().getOrderItems());
                     orderItems.setAdapter(adapter);
-                    orderPrice.setText("Order Price: " + String.format("%.2f",curr.orderPrice()));
-                    orderTax.setText("Tax: " + String.format("%.2f", curr.orderPrice() * taxMult));
-                    double finalPrice = curr.orderPrice() + (curr.orderPrice() * taxMult);
+                    Order reset = Store.getInstance().getCurrentOrder();
+                    orderPrice.setText("Order Price: " + String.format("%.2f",reset.orderPrice()));
+                    orderTax.setText("Tax: " + String.format("%.2f", reset.orderPrice() * taxMult));
+                    double finalPrice = reset.orderPrice() + (reset.orderPrice() * taxMult);
                     totalPrice.setText("Total Price: " + String.format("%.2f", finalPrice));
 
                 }

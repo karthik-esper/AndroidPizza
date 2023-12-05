@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {openOrderFragment();}
         });
+
+        storeOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {openStoreOrderFragment();}
+        });
     }
 
     private void openSpecialtyFragment() {
@@ -43,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
     private void openOrderFragment() {
         orderFragment orderFrag = new orderFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, orderFrag)
+                .addToBackStack(null).commit();
+
+    }
+
+    private void openStoreOrderFragment() {
+        storeOrderFragment storeFrag = new storeOrderFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, storeFrag)
                 .addToBackStack(null).commit();
 
     }
