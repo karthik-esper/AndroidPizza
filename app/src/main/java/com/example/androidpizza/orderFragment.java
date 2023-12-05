@@ -35,7 +35,7 @@ public class orderFragment extends Fragment{
     private TextView orderTax;
     private TextView totalPrice;
     private ListView orderItems;
-
+    private Button deletePizza;
     private View selectedView = null;
     private int selectedPosition = -1;
 
@@ -54,7 +54,34 @@ public class orderFragment extends Fragment{
         orderItems.setAdapter(adapter);
         createListListener(view);
         initializePrices(view);
+        createPizzaDeleter(view);
         return view;
+    }
+
+    private void createPizzaDeleter(View view) {
+        deletePizza = view.findViewById(R.id.deletePizza);
+        deletePizza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (selectedPosition < 0) {
+                    Toast.makeText(getContext(), "Item not selected!", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Order curr = Store.getInstance().getCurrentOrder();
+                    curr.removeItem(selectedPosition);
+                    ArrayAdapter<Pizza> adapter = new ArrayAdapter<>(getContext(),
+                            android.R.layout.simple_list_item_1, curr.getOrderItems());
+                    orderItems.setAdapter(adapter);
+                    orderPrice = view.findViewById(R.id.orderPrice);
+                    orderPrice.setText("Order Price: " + String.format("%.2f",curr.orderPrice()));
+                    orderTax = view.findViewById(R.id.taxAmt);
+                    orderTax.setText("Tax: " + String.format("%.2f", curr.orderPrice() * taxMult));
+                    double finalPrice = curr.orderPrice() + (curr.orderPrice() * taxMult);
+                    totalPrice = view.findViewById(R.id.totalPrice);
+                    totalPrice.setText("Total Price: " + String.format("%.2f", finalPrice));
+                }
+            }
+        });
     }
 
     private void createListListener(View view) {

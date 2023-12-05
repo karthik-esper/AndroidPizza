@@ -91,6 +91,8 @@ public class specialtyFragment extends Fragment {
                         clearitems(view);
                         Price.setText("Price: ");
                         Toast.makeText(getContext(), "Creating Pizza", Toast.LENGTH_LONG).show();
+                        sizeSelected = false;
+                        recyclerItemSelected = false;
                     }
                     else {Toast.makeText(getContext(), "size not selected", Toast.LENGTH_SHORT).show();}
                 }
