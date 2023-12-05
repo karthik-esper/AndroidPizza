@@ -58,6 +58,9 @@ public class storeOrderFragment extends Fragment {
         ArrayAdapter<Integer> adapter = new ArrayAdapter<>(getContext(),
                 android.R.layout.simple_list_item_1, orders);
         orderSelector.setAdapter(adapter);
+        if (orders.size() > 0) {
+            selectedOrder = 1;
+        }
         setDeleteListener(view);
         setSpinnerListener(view);
         return view;
