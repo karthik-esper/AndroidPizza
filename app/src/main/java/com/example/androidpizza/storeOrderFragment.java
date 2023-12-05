@@ -53,20 +53,20 @@ public class storeOrderFragment extends Fragment {
             }
         }
         orderSelector = view.findViewById(R.id.orderSelector);
+        deleteOrder = view.findViewById(R.id.deleteOrder);
         totalPrice = view.findViewById(R.id.totalPrice);
         orderView = view.findViewById(R.id.orderView);
         ArrayAdapter<Integer> adapter = new ArrayAdapter<>(getContext(),
                 android.R.layout.simple_list_item_1, orders);
         orderSelector.setAdapter(adapter);
         if (orders.size() > 0) {
-            selectedOrder = 1;
+            selectedOrder = orders.get(0);
         }
         setDeleteListener(view);
         setSpinnerListener(view);
         return view;
     }
     private void setDeleteListener(View view) {
-        deleteOrder = view.findViewById(R.id.deleteOrder);
         deleteOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,7 +87,10 @@ public class storeOrderFragment extends Fragment {
                     ArrayAdapter<Integer> adapter = new ArrayAdapter<>(getContext(),
                             android.R.layout.simple_list_item_1, orders);
                     orderSelector.setAdapter(adapter);
-                    selectedOrder = -1;
+                    selectedOrder = orders.get(0);
+                    ArrayAdapter<Pizza> deletedAdapter = new ArrayAdapter<>(getContext(),
+                            android.R.layout.simple_list_item_1, toDelete.getOrderItems());
+                    orderView.setAdapter(deletedAdapter);
                 }
             }
         });
