@@ -36,6 +36,7 @@ public class orderFragment extends Fragment{
     private TextView totalPrice;
     private ListView orderItems;
     private Button deletePizza;
+    private Button placeOrder;
     private View selectedView = null;
     private int selectedPosition = -1;
 
@@ -55,7 +56,38 @@ public class orderFragment extends Fragment{
         createListListener(view);
         initializePrices(view);
         createPizzaDeleter(view);
+        createOrderPlacer(view);
         return view;
+    }
+
+    private void createOrderPlacer(View view) {
+        placeOrder = view.findViewById(R.id.placeOrder);
+        StoreOrders storeOrder = Store.getInstance().getOrderHistory();
+        Order curr = Store.getInstance().getCurrentOrder();
+        placeOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (curr.getSize() == 0) {
+                    Toast.makeText(getContext(), "Empty order", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    if (storeOrder.getNumOrders() == 0) {
+                        storeOrder.addOrder(curr);
+                    }
+                    Store.getInstance().setNextOrder();
+                    orderNo.setText("Order Number: " + Store.getInstance().getOrderHistory().getNextOrder());
+                    ArrayAdapter<Pizza> adapter = new ArrayAdapter<>(getContext(),
+                            android.R.layout.simple_list_item_1, Store.getInstance()
+                            .getCurrentOrder().getOrderItems());
+                    orderItems.setAdapter(adapter);
+                    orderPrice.setText("Order Price: " + String.format("%.2f",curr.orderPrice()));
+                    orderTax.setText("Tax: " + String.format("%.2f", curr.orderPrice() * taxMult));
+                    double finalPrice = curr.orderPrice() + (curr.orderPrice() * taxMult);
+                    totalPrice.setText("Total Price: " + String.format("%.2f", finalPrice));
+
+                }
+            }
+        });
     }
 
     private void createPizzaDeleter(View view) {
