@@ -13,6 +13,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -93,12 +95,47 @@ public class specialtyFragment extends Fragment {
                         Toast.makeText(getContext(), "Creating Pizza", Toast.LENGTH_LONG).show();
                         sizeSelected = false;
                         recyclerItemSelected = false;
+                        createAlert("Pizza Made");
                     }
-                    else {Toast.makeText(getContext(), "size not selected", Toast.LENGTH_SHORT).show();}
+                    else {
+                        Toast.makeText(getContext(), "size not selected", Toast.LENGTH_SHORT).show();
+                        createAlert("No Size");}
                 }
-                else {Toast.makeText(getContext(), "no Pizza Type Selected", Toast.LENGTH_SHORT).show();}
+                else {
+                    Toast.makeText(getContext(), "no Pizza Type Selected", Toast.LENGTH_SHORT).show();
+                    createAlert("No Type");}
             }
         });
+    }
+
+    private void createAlert(String type) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        if (type.equals("Pizza Made")) {
+            builder.setMessage("Pizza was created")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {}
+                    });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+        }
+        if (type.equals("No Size")) {
+            builder.setMessage("Size not Selected")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {}
+                    });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+        }
+        if (type.equals("No Type")) {
+            builder.setMessage("Type not Selected")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {}
+                    });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+        }
+
+
     }
 
     private void clearitems(View view) {

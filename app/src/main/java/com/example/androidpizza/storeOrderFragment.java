@@ -87,7 +87,12 @@ public class storeOrderFragment extends Fragment {
                     ArrayAdapter<Integer> adapter = new ArrayAdapter<>(getContext(),
                             android.R.layout.simple_list_item_1, orders);
                     orderSelector.setAdapter(adapter);
-                    selectedOrder = orders.get(0);
+                    if (orders.size() > 1) {
+                        selectedOrder = orders.get(0);
+                    }
+                    else {
+                        selectedOrder = -1;
+                    }
                     ArrayAdapter<Pizza> deletedAdapter = new ArrayAdapter<>(getContext(),
                             android.R.layout.simple_list_item_1, toDelete.getOrderItems());
                     orderView.setAdapter(deletedAdapter);
