@@ -95,6 +95,7 @@ public class buildYourOwnPizzaFragment extends Fragment{
 
     }
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -104,96 +105,94 @@ public class buildYourOwnPizzaFragment extends Fragment{
     }
 
     protected void setToppingsListener(View view) {
-        sausage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toppingSelect(Topping.SAU, sausage);
-            }
-        });
-
-        pepperoni.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toppingSelect(Topping.PE, pepperoni);
-            }
-        });
-
-        beef.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toppingSelect(Topping.BE, beef);
-            }
-        });
-
-        ham.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toppingSelect(Topping.HA, ham);
-            }
-        });
-
-        shrimp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toppingSelect(Topping.SH, shrimp);
-            }
-        });
-
-        squid.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toppingSelect(Topping.SQ, squid);
-            }
-        });
-
-        crab_meat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toppingSelect(Topping.CM, crab_meat);
-            }
-        });
-
-        green_pepper.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toppingSelect(Topping.GP, green_pepper);
-            }
-        });
-
-        onion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toppingSelect(Topping.ON, onion);
-            }
-        });
-
-        mushroom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toppingSelect(Topping.MU, mushroom);
-            }
-        });
-
-        black_olive.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toppingSelect(Topping.BO, black_olive);
-            }
-        });
-
-        pineapple.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toppingSelect(Topping.PI, pineapple);
-            }
-        });
-
-        jalapeno.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toppingSelect(Topping.JA, jalapeno);
-            }
-        });
+        System.out.println("NOT WORKING");
+//        if(sausage.isChecked()) {
+//            toppingSelect(Topping.SAU, sausage);
+//        }
+//
+//        pepperoni.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toppingSelect(Topping.PE, pepperoni);
+//            }
+//        });
+//
+//        beef.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toppingSelect(Topping.BE, beef);
+//            }
+//        });
+//
+//        ham.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toppingSelect(Topping.HA, ham);
+//            }
+//        });
+//
+//        shrimp.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toppingSelect(Topping.SH, shrimp);
+//            }
+//        });
+//
+//        squid.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toppingSelect(Topping.SQ, squid);
+//            }
+//        });
+//
+//        crab_meat.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toppingSelect(Topping.CM, crab_meat);
+//            }
+//        });
+//
+//        green_pepper.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toppingSelect(Topping.GP, green_pepper);
+//            }
+//        });
+//
+//        onion.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toppingSelect(Topping.ON, onion);
+//            }
+//        });
+//
+//        mushroom.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toppingSelect(Topping.MU, mushroom);
+//            }
+//        });
+//
+//        black_olive.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toppingSelect(Topping.BO, black_olive);
+//            }
+//        });
+//
+//        pineapple.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toppingSelect(Topping.PI, pineapple);
+//            }
+//        });
+//
+//        jalapeno.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toppingSelect(Topping.JA, jalapeno);
+//            }
+//        });
     }
 
 
