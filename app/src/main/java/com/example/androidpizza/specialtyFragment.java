@@ -27,6 +27,11 @@ import static com.example.androidpizza.PizzaMaker.createPizza;
 
 import java.util.ArrayList;
 
+/**
+ * The class that handles every operation related to the specialty pizza orders.
+ * Works within a fragment.
+ * @author Karthik Gangireddy, Vineal Sunkara
+ */
 public class specialtyFragment extends Fragment {
     private TextView Price;
     private RecyclerView recyclerPizzaView;
@@ -52,10 +57,25 @@ public class specialtyFragment extends Fragment {
             R.drawable.pepperonipizza, R.drawable.meatzzapizza, R.drawable.hawaiianpizza,
             R.drawable.spicypizza,R.drawable.veggiepizza,R.drawable.surfturfpizza, R.drawable.sussypizza};
 
+    /**
+     * Default constructor for the fragment.
+     */
     public specialtyFragment() {
 
     }
 
+    /**
+     * Creates the view that everything will be displayed on.
+     * @param inflater The LayoutInflater object that can be used to inflate
+     * any views in the fragment,
+     * @param container If non-null, this is the parent view that the fragment's
+     * UI should be attached to.  The fragment should not add the view itself,
+     * but this can be used to generate the LayoutParams of the view.
+     * @param savedInstanceState If non-null, this fragment is being re-constructed
+     * from a previous saved state as given here.
+     *
+     * @return the view for everything to be displayed on.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -77,9 +97,17 @@ public class specialtyFragment extends Fragment {
         return view;
     }
 
+    /**
+     * Handles the clicking of the createPizza button, which creates and adds a pizza to current order.
+     * @param view the view that everything is handled on to fetch elements.
+     */
     private void createPizzaButton(View view) {
         placeOrder = view.findViewById(R.id.PizzaButton);
         placeOrder.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Handles the creation of a pizza and addition to order once button is clicked.
+             * @param v The view that was clicked.
+             */
             @Override
             public void onClick(View v) {
                 if (recyclerItemSelected) {
@@ -93,11 +121,8 @@ public class specialtyFragment extends Fragment {
                         clearitems(view);
                         Price.setText("Price: ");
                         Toast.makeText(getContext(), "Creating Pizza", Toast.LENGTH_LONG).show();
-                        sizes.setSelection(0);
                         sizeSelected = false;
                         recyclerItemSelected = false;
-                        extraCheese.setEnabled(false);
-                        extraSauce.setEnabled(false);
                         createAlert("Pizza Made");
                     }
                     else {
@@ -111,6 +136,10 @@ public class specialtyFragment extends Fragment {
         });
     }
 
+    /**
+     * Creates alerts based on the provided error/success conditions.
+     * @param type a string describing the error and the necessary alert.
+     */
     private void createAlert(String type) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         if (type.equals("Pizza Made")) {
@@ -141,19 +170,31 @@ public class specialtyFragment extends Fragment {
 
     }
 
+    /**
+     * Clears certain boxes after the Pizza Button works.
+     * @param view the view that everything is handled on to fetch elements.
+     */
     private void clearitems(View view) {
         extraCheese.setChecked(false);
         extraSauce.setChecked(false);
         extraCheese.setEnabled(false);
         extraSauce.setEnabled(false);
         sizes = view.findViewById(R.id.mySpinner);
-        sizes.setSelection(-1);
+        sizes.setSelection(0);
         sizes.setEnabled(false);
 
     }
 
+    /**
+     * Handles the checkbox that selects whether the pizza has extra cheese or not with live updates.
+     * @param view the view that everything is handled on to fetch elements.
+     */
     private void setCheeseListener(View view) {
         extraCheese.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Handles the selection and deselection of checkbox for extra cheese.
+             * @param v The view that was clicked.
+             */
             @Override
             public void onClick(View v) {
                 if (extraCheese.isChecked()) {
@@ -178,8 +219,16 @@ public class specialtyFragment extends Fragment {
         });
     }
 
+    /**
+     * Handles the checkbox that selects whether the pizza has extra sauce or not with live updates.
+     * @param view the view that everything is handled on to fetch elements.
+     */
     private void setSauceListener(View view) {
         extraSauce.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Handles the selection and deselection of checkbox for extra sauce.
+             * @param v The view that was clicked.
+             */
             @Override
             public void onClick(View v) {
                 if (extraSauce.isChecked()) {
@@ -204,24 +253,29 @@ public class specialtyFragment extends Fragment {
         });
     }
 
+    /**
+     * Creates the necessary items for the spinner that selects sizes to function.
+     * @param view the view that everything is handled on to fetch elements.
+     */
     private void setSpinnerListener(View view) {
         Spinner spinner = view.findViewById(R.id.mySpinner);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * Handles when a size is selected from the spinner and updated price.
+             * @param parent The AdapterView where the selection happened
+             * @param view The view within the AdapterView that was clicked
+             * @param position The position of the view in the adapter
+             * @param id The row id of the item that is selected
+             */
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (recyclerItemSelected) {
                     CharSequence selectedValue = (CharSequence) parent.getItemAtPosition(position);
                     Pizza toMake = createPizza(selectedPizzaType);
                     char size = selectedValue.charAt(0);
-                    if (size == 's' || size == 'S') {
-                        toMake.setSize(Size.S);
-                    }
-                    if (size == 'm' || size == 'M') {
-                        toMake.setSize(Size.M);
-                    }
-                    if (size == 'l' || size == 'L') {
-                        toMake.setSize(Size.L);
-                    }
+                    if (size == 's' || size == 'S') {toMake.setSize(Size.S);}
+                    if (size == 'm' || size == 'M') {toMake.setSize(Size.M);}
+                    if (size == 'l' || size == 'L') {toMake.setSize(Size.L);}
                     selectedPizzaSize = String.valueOf(size);
                     sizeSelected = true;
                     extraSauce.setChecked(false);
@@ -230,19 +284,31 @@ public class specialtyFragment extends Fragment {
                 }
             }
 
+            /**
+             * Handles when nothing is selected, nothing happens.
+             * @param parent The AdapterView that now contains no selected item.
+             */
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
     }
 
-
+    /**
+     * Uses the programAdapter to handle the necessary values for the recyclerView.
+     * Allows other items to be selected once something is chosen from the recycler view.
+     * @param view the view that everything is handled on to fetch elements.
+     */
     private void setPizzaChoices(View view) {
         recyclerPizzaView = view.findViewById(R.id.myRecyclerView);
         recyclerPizzaView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerPizzaView.setItemAnimator(new DefaultItemAnimator());
         recyclerPizzaView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
         pizzaAdapter = new pizzaAdapter(getContext(), pizzaNames, pizzaDetails, pizzaImages, new pizzaAdapter.OnItemClickListener() {
+            /**
+             * Handles the selection of a pizza from the recycler view.
+             * @param position position of the selected item.
+             */
             @Override
             public void onItemClick(int position) {
                 recyclerItemSelected = true;
