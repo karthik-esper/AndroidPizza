@@ -5,89 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <CheckBox
-        android:id="@+id/mushroom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mushroom"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="303dp" />
-
-    <CheckBox
-        android:id="@+id/black_olive"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Black Olive"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="351dp" />
-
-    <CheckBox
-        android:id="@+id/onion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Onion"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="303dp" />
-
-    <CheckBox
-        android:id="@+id/pineapple"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pineapple"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="351dp" />
-
-    <CheckBox
-        android:id="@+id/squid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Squid"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="207dp" />
-
-    <CheckBox
-        android:id="@+id/green_pepper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Green Pepper"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="255dp" />
-
-    <CheckBox
-        android:id="@+id/crab_meat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Crab Meat"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="255dp" />
-
-    <CheckBox
-        android:id="@+id/shrimp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Shrimp"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="207dp" />
-
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="339dp"
-        android:layout_height="274dp"
-        android:layout_marginEnd="36dp"
+        android:layout_width="180dp"
+        android:layout_height="165dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/byozza"
-        tools:layout_editor_absoluteY="457dp" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.673"
+        app:srcCompat="@drawable/byozza" />
 
     <EditText
         android:id="@+id/editTextText"
         android:layout_width="84dp"
         android:layout_height="40dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="68dp"
         android:ems="10"
         android:inputType="text"
         android:text="Toppings"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="65dp"
-        tools:layout_editor_absoluteY="71dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextText2"
@@ -99,58 +40,232 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textDirection="firstStrongRtl"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="1dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="4dp" />
 
     <EditText
         android:id="@+id/editTextText3"
         android:layout_width="84dp"
         android:layout_height="40dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="68dp"
         android:ems="10"
         android:inputType="text"
         android:text="Sauce"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="311dp"
-        tools:layout_editor_absoluteY="71dp" />
+        app:layout_constraintStart_toEndOf="@+id/editTextText"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/sausage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="108dp"
         android:text="Sausage"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="111dp" />
-
-    <CheckBox
-        android:id="@+id/beef"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Beef"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="159dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/pepperoni"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
         android:text="Pepperoni"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="111dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sausage" />
 
     <CheckBox
         android:id="@+id/ham"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="148dp"
         android:text="Ham"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="159dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/shrimp"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:text="Shrimp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ham" />
+
+    <CheckBox
+        android:id="@+id/squid"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="188dp"
+        android:text="Squid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/crab_meat"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:text="Crab Meat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/squid" />
+
+    <CheckBox
+        android:id="@+id/green_pepper"
+        android:layout_width="121dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="108dp"
+        android:text="Green Pepper"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/onion"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="20dp"
+        android:text="Onion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/green_pepper" />
+
+    <CheckBox
+        android:id="@+id/mushroom"
+        android:layout_width="102dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="148dp"
+        android:text="Mushroom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/black_olive"
+        android:layout_width="111dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="168dp"
+        android:text="Black Olive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/pineapple"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="188dp"
+        android:text="Pineapple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/jalapeno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="208dp"
         android:text="Jalapeno"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="399dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/beef"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="228dp"
+        android:text="Beef"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/sauceGroup"
+        android:layout_width="124dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginTop="116dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/tomato"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:text="Tomato" />
+
+        <RadioButton
+            android:id="@+id/alfredo"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:text="Alfredo" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/Size"
+        android:layout_width="55dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="276dp"
+        android:layout_marginTop="168dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Size"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="110dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="208dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="252dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton5"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginTop="248dp"
+        android:text="RadioButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/radioButton6"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginTop="268dp"
+        android:text="RadioButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/createPizza"
+        android:layout_width="176dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="296dp"
+        android:text="Create Pizza!"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextText2" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="106dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="268dp"
+        android:text="Price: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
