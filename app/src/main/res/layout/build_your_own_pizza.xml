@@ -1,31 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="340dp"
-        android:layout_height="70dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Build Your Own Pizza!"
-        android:textSize="34sp"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerBuildYourOwnPizzaView"
-        android:layout_width="410dp"
-        android:layout_height="258dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="472dp" />
-
-    <TextView
-        android:id="@+id/textView3"
+    <CheckBox
+        android:id="@+id/mushroom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Yeet"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="199dp" />
+        android:text="Mushroom"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="303dp" />
+
+    <CheckBox
+        android:id="@+id/black_olive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Black Olive"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+    <CheckBox
+        android:id="@+id/onion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Onion"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="303dp" />
+
+    <CheckBox
+        android:id="@+id/pineapple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pineapple"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+    <CheckBox
+        android:id="@+id/squid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Squid"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="207dp" />
+
+    <CheckBox
+        android:id="@+id/green_pepper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Green Pepper"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="255dp" />
+
+    <CheckBox
+        android:id="@+id/crab_meat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crab Meat"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="255dp" />
+
+    <CheckBox
+        android:id="@+id/shrimp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shrimp"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="207dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="339dp"
+        android:layout_height="274dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/byozza"
+        tools:layout_editor_absoluteY="457dp" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="84dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Toppings"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="71dp" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="403dp"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Build Your Own Pizza!"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textDirection="firstStrongRtl"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="84dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Sauce"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="311dp"
+        tools:layout_editor_absoluteY="71dp" />
+
+    <CheckBox
+        android:id="@+id/sausage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sausage"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="111dp" />
+
+    <CheckBox
+        android:id="@+id/beef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Beef"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="159dp" />
+
+    <CheckBox
+        android:id="@+id/pepperoni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pepperoni"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="111dp" />
+
+    <CheckBox
+        android:id="@+id/ham"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ham"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="159dp" />
+
+    <CheckBox
+        android:id="@+id/jalapeno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jalapeno"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="399dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

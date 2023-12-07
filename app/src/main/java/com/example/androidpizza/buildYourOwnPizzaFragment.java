@@ -32,24 +32,65 @@ import androidx.recyclerview.widget.RecyclerView;
 import static com.example.androidpizza.PizzaMaker.createPizza;
 
 import java.util.ArrayList;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+
 public class buildYourOwnPizzaFragment extends Fragment{
-    private TextView Price;
-    private ListView Toppings;
+    private TextView price;
     private Spinner sizes;
     private CheckBox extraSauce;
     private CheckBox extraCheese;
     private Button placeOrder;
-    private RecyclerView.Adapter pizzaAdapter;
-    private boolean recyclerItemSelected = false;
-    private boolean sizeSelected = false;
+    private CheckBox sausage;
+
+    private CheckBox pepperoni;
+
+    private CheckBox beef;
+
+    private CheckBox ham;
+
+    private CheckBox shrimp;
+
+    private CheckBox squid;
+
+    private CheckBox crab_meat;
+
+    private CheckBox green_pepper;
+
+    private CheckBox onion;
+
+    private CheckBox mushroom;
+
+    private CheckBox black_olive;
+
+    private CheckBox pineapple;
+
+    private CheckBox jalapeno;
 
     private final int pizzaImages = R.drawable.byozza;
 
-    private RecyclerView recyclerBuildYourOwnPizzaView;
+    private ArrayList<CheckBox> checkBoxList;
 
+    private ArrayList<Topping> toppers = new ArrayList<>();
+    private int toppingCounter;
+    private static final int MAX_TOPPING_SIZE = 7;
+    private static final int MIN_TOPPING_SIZE = 3;
+
+//    checkBoxList = new ArrayList<CheckBox>();
+//        checkBoxList.add(sausage);
+//        checkBoxList.add(pepperoni);
+//        checkBoxList.add(ham);
+//        checkBoxList.add(shrimp);
+//        checkBoxList.add(squid);
+//        checkBoxList.add(crab_meat);
+//        checkBoxList.add(green_pepper);
+//        checkBoxList.add(onion);
+//        checkBoxList.add(mushroom);
+//        checkBoxList.add(black_olive);
+//        checkBoxList.add(pineapple);
+//        checkBoxList.add(jalapeno);
     public buildYourOwnPizzaFragment() {
 
     }
@@ -57,21 +98,120 @@ public class buildYourOwnPizzaFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.specialty_pizza, container, false);
-        Spinner spinner = view.findViewById(R.id.mySpinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.spinner_sizes, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        extraCheese = view.findViewById(R.id.extraCheese);
-        extraSauce = view.findViewById(R.id.extraSauce);
-        extraSauce.setEnabled(false);
-        extraCheese.setEnabled(false);
-        spinner.setEnabled(false);
-        spinner.setAdapter(adapter);
-        //setPizzaChoices(view);
-        //setSpinnerListener(view);
-        //setCheeseListener(view);
-        //setSauceListener(view);
-        //createPizzaButton(view);
+        View view = inflater.inflate(R.layout.build_your_own_pizza, container, false);
+        setToppingsListener(view);
         return view;
     }
+
+    protected void setToppingsListener(View view) {
+        sausage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toppingSelect(Topping.SAU, sausage);
+            }
+        });
+
+        pepperoni.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toppingSelect(Topping.PE, pepperoni);
+            }
+        });
+
+        beef.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toppingSelect(Topping.BE, beef);
+            }
+        });
+
+        ham.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toppingSelect(Topping.HA, ham);
+            }
+        });
+
+        shrimp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toppingSelect(Topping.SH, shrimp);
+            }
+        });
+
+        squid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toppingSelect(Topping.SQ, squid);
+            }
+        });
+
+        crab_meat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toppingSelect(Topping.CM, crab_meat);
+            }
+        });
+
+        green_pepper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toppingSelect(Topping.GP, green_pepper);
+            }
+        });
+
+        onion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toppingSelect(Topping.ON, onion);
+            }
+        });
+
+        mushroom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toppingSelect(Topping.MU, mushroom);
+            }
+        });
+
+        black_olive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toppingSelect(Topping.BO, black_olive);
+            }
+        });
+
+        pineapple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toppingSelect(Topping.PI, pineapple);
+            }
+        });
+
+        jalapeno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toppingSelect(Topping.JA, jalapeno);
+            }
+        });
+    }
+
+
+    protected void toppingSelect(Topping top, CheckBox cbox) {
+        if (cbox.isChecked()) {
+            if (toppingCounter < MAX_TOPPING_SIZE) {
+                toppers.add(top);
+                toppingCounter++;
+            } else {
+                cbox.setChecked(false);
+                Toast.makeText(getContext(), "Too many toppings! A maximum of 7 toppings is allowed.", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            toppers.remove(top);
+            toppingCounter--;
+        }
+        System.out.println(toppers);
+    }
 }
+
+
