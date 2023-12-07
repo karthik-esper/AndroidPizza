@@ -38,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {openStoreOrderFragment();}
         });
+
+        buildYourOwn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { openBuildYourOwnFragment();}
+        });
     }
 
     private void openSpecialtyFragment() {
@@ -57,5 +62,11 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, storeFrag)
                 .addToBackStack(null).commit();
 
+    }
+
+    private void openBuildYourOwnFragment() {
+        buildYourOwnPizzaFragment storeBuild = new buildYourOwnPizzaFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, storeBuild)
+                .addToBackStack(null).commit();
     }
 }
