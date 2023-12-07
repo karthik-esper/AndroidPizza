@@ -334,3 +334,4 @@ public class specialtyFragment extends Fragment {
         recyclerPizzaView.setAdapter(pizzaAdapter);
     }
 }
+

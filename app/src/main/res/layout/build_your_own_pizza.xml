@@ -11,29 +11,31 @@
         android:layout_height="165dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.673"
+        app:layout_constraintVertical_bias="0.809"
         app:srcCompat="@drawable/byozza" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextText"
         android:layout_width="84dp"
         android:layout_height="40dp"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="76dp"
         android:ems="10"
         android:inputType="text"
         android:text="Toppings"
         android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextText2"
         android:layout_width="403dp"
         android:layout_height="70dp"
+        android:layout_marginStart="4dp"
         android:ems="10"
         android:inputType="text"
         android:text="Build Your Own Pizza!"
@@ -41,20 +43,21 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textDirection="firstStrongRtl"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="4dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextText3"
         android:layout_width="84dp"
         android:layout_height="40dp"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="76dp"
         android:ems="10"
         android:inputType="text"
         android:text="Sauce"
         android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toEndOf="@+id/editTextText"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -207,26 +210,30 @@
             android:text="Alfredo" />
     </RadioGroup>
 
-    <EditText
+    <TextView
         android:id="@+id/Size"
         android:layout_width="55dp"
         android:layout_height="39dp"
         android:layout_marginStart="276dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="176dp"
         android:ems="10"
         android:inputType="text"
         android:text="Size"
         android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="110dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="208dp"
+        android:id="@+id/mySpinner"
+        android:layout_width="123dp"
+        android:layout_height="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="252dp" />
+        app:layout_constraintVertical_bias="0.369" />
 
     <RadioButton
         android:id="@+id/radioButton5"

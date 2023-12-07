@@ -1,7 +1,11 @@
 package com.example.androidpizza;
 
+import static com.example.androidpizza.PizzaMaker.createPizza;
+
 import android.annotation.SuppressLint;
 import android.util.Log;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
@@ -27,6 +31,7 @@ import java.util.ArrayList;
 public class buildYourOwnPizzaFragment extends Fragment {
     private TextView price;
     private Sauce sauce;
+    private Size sizePizza;
     private RadioButton tomato;
     private RadioButton alfredo;
     private Spinner sizes;
@@ -37,6 +42,9 @@ public class buildYourOwnPizzaFragment extends Fragment {
     private ArrayList<CheckBox> checkBoxList;
     private ArrayList<Topping> toppers = new ArrayList<>();
     private int toppingCounter;
+    private Spinner mySpinner;
+    private String selectedPizzaSize;
+    private boolean sizeSelected = false;
     private static final int MAX_TOPPING_SIZE = 7;
     private static final int MIN_TOPPING_SIZE = 3;
 
@@ -62,6 +70,12 @@ public class buildYourOwnPizzaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.build_your_own_pizza, container, false);
+        Spinner spinner = view.findViewById(R.id.mySpinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.spinner_sizes, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setEnabled(true);
+        spinner.setAdapter(adapter);
+        setSpinnerListener(view);
         setToppingsListener(view);
         sauceListener(view);
         return view;
@@ -281,6 +295,70 @@ public class buildYourOwnPizzaFragment extends Fragment {
             }
         });
     }
-}
+
+    private void setSpinnerListener(View view) {
+        Spinner spinner = view.findViewById(R.id.mySpinner);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * Handles when a size is selected from the spinner and updated price.
+             * @param parent The AdapterView where the selection happened
+             * @param view The view within the AdapterView that was clicked
+             * @param position The position of the view in the adapter
+             * @param id The row id of the item that is selected
+             */
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    CharSequence selectedValue = (CharSequence) parent.getItemAtPosition(position);
+                    Pizza toMake = createPizza("byop");
+                    char size = selectedValue.charAt(0);
+                    if (size == 's' || size == 'S') {toMake.setSize(Size.S);}
+                    if (size == 'm' || size == 'M') {toMake.setSize(Size.M);}
+                    if (size == 'l' || size == 'L') {toMake.setSize(Size.L);}
+                    selectedPizzaSize = String.valueOf(size);
+                    sizeSelected = true;
+                    Log.i("Size", selectedPizzaSize);
+                    //extraSauce.setChecked(false);
+                    //extraCheese.setChecked(false);
+                    //price.setText(String.format("%.2f", toMake.price()));
+            }
+
+            /**
+             * Handles when nothing is selected, nothing happens.
+             * @param parent The AdapterView that now contains no selected item.
+             */
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
+
+    private void createPizzaListener(View view) {
+        if(sizeSelected) {
+            Pizza toMake = createPizza("byop");
+            toMake.setToppings(toppers);
+            if (selectedPizzaSize.charAt(0) == (Size.S.getPizzaSize().charAt(0))) {
+                toMake.setSize(Size.S);
+            }
+            if (selectedPizzaSize.charAt(0) == (Size.M.getPizzaSize().charAt(0))) {
+                toMake.setSize(Size.M);
+            }
+            if (selectedPizzaSize.charAt(0) == (Size.L.getPizzaSize().charAt(0))) {
+                toMake.setSize(Size.L);
+            }
+            toMake.setExtraCheese(false);
+            toMake.setExtraSauce(false);
+            Store.getInstance().getCurrentOrder().addToOrder(toMake);
+            price.setText("Price: ");
+            Toast.makeText(getContext(), "Creating Pizza", Toast.LENGTH_LONG).show();
+            sizeSelected = false;
+            createAlert("Pizza Made");
+        }
+        else {
+            createAlert("No Size");}
+        }
+
+    }
+
+
 
 
