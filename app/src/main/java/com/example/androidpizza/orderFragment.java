@@ -28,6 +28,11 @@ import org.w3c.dom.Text;
 
 import java.sql.Array;
 import java.util.ArrayList;
+
+/**
+ * Handles the current order display as well as deletion and placing operations.
+ * @author Karthik Gangireddy, Vineal Sunkara
+ */
 public class orderFragment extends Fragment{
     private static final double taxMult = .06625; // % of the tax
     private TextView orderNo;
@@ -40,10 +45,25 @@ public class orderFragment extends Fragment{
     private View selectedView = null;
     private int selectedPosition = -1;
 
+    /**
+     * default constructor for the order Fragment.
+     */
     public orderFragment () {
 
     }
 
+    /**
+     * Handles creating the view that everythign happen son.
+     * @param inflater The LayoutInflater object that can be used to inflate
+     * any views in the fragment,
+     * @param container If non-null, this is the parent view that the fragment's
+     * UI should be attached to.  The fragment should not add the view itself,
+     * but this can be used to generate the LayoutParams of the view.
+     * @param savedInstanceState If non-null, this fragment is being re-constructed
+     * from a previous saved state as given here.
+     *
+     * @return the view created.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -60,11 +80,19 @@ public class orderFragment extends Fragment{
         return view;
     }
 
+    /**
+     * Initializes the function for the button that places the order.
+     * @param view the view that everything is handled on to fetch elements.
+     */
     private void createOrderPlacer(View view) {
         placeOrder = view.findViewById(R.id.placeOrder);
         StoreOrders storeOrder = Store.getInstance().getOrderHistory();
         Order curr = Store.getInstance().getCurrentOrder();
         placeOrder.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Handles the placing of the order once the button is clicked.
+             * @param v The view that was clicked.
+             */
             @Override
             public void onClick(View v) {
                 if (curr.getSize() == 0) {
@@ -91,9 +119,17 @@ public class orderFragment extends Fragment{
         });
     }
 
+    /**
+     * Handles the deletion of the selected item from the order.
+     * @param view the view that everything is handled on to fetch elements.
+     */
     private void createPizzaDeleter(View view) {
         deletePizza = view.findViewById(R.id.deletePizza);
         deletePizza.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Handles the deletion of a selected pizza.
+             * @param v The view that was clicked.
+             */
             @Override
             public void onClick(View v) {
                 if (selectedPosition < 0) {
@@ -117,40 +153,49 @@ public class orderFragment extends Fragment{
         });
     }
 
+    /**
+     * Handles the selection of a pizza from the order.
+     * @param view the view that everything is handled on to fetch elements.
+     */
     private void createListListener(View view) {
         orderItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             * Handles the selection of a pizza from the list.
+             * @param parent The AdapterView where the click happened.
+             * @param view The view within the AdapterView that was clicked (this
+             *            will be a view provided by the adapter)
+             * @param position The position of the view in the adapter.
+             * @param id The row id of the item that was clicked.
+             */
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Check if the same view is clicked again
                 if (selectedPosition == position) {
-                    // If clicked again, toggle its state
                     boolean isSelected = view.getTag() != null && (boolean) view.getTag();
                     if (isSelected) {
-                        view.setBackgroundColor(Color.TRANSPARENT); // or any default color
-                        view.setTag(false); // Update tag to reflect unselected state
+                        view.setBackgroundColor(Color.TRANSPARENT);
+                        view.setTag(false);
                         selectedPosition = -1;
                     } else {
-                        view.setBackgroundColor(Color.YELLOW); // Highlight color
-                        view.setTag(true); // Update tag to reflect selected state
+                        view.setBackgroundColor(Color.YELLOW);
+                        view.setTag(true);
                         selectedPosition = position;
                     }
                 } else {
-                    // For a new selection
                     if (selectedView != null) {
-                        selectedView.setBackgroundColor(Color.TRANSPARENT); // Reset previous selection
-                        selectedView.setTag(false); // Update tag of previous view
+                        selectedView.setBackgroundColor(Color.TRANSPARENT);
+                        selectedView.setTag(false);
                     }
-                    view.setBackgroundColor(Color.YELLOW); // Highlight new selection
-                    view.setTag(true); // Update tag of new view
-
-                    // Update reference to the new selection
+                    view.setBackgroundColor(Color.YELLOW);
+                    view.setTag(true);
                     selectedView = view;
                     selectedPosition = position;
-                }
-            }
-        });
+                }}});
     }
 
+    /**
+     * Sets the price of the order based on the total of the elements provided, including tax.
+     * @param view the view that everything is handled on to fetch elements.
+     */
     private void initializePrices(View view) {
         orderNo = view.findViewById(R.id.orderNum);
         Order curr = Store.getInstance().getCurrentOrder();
