@@ -93,8 +93,11 @@ public class specialtyFragment extends Fragment {
                         clearitems(view);
                         Price.setText("Price: ");
                         Toast.makeText(getContext(), "Creating Pizza", Toast.LENGTH_LONG).show();
+                        sizes.setSelection(0);
                         sizeSelected = false;
                         recyclerItemSelected = false;
+                        extraCheese.setEnabled(false);
+                        extraSauce.setEnabled(false);
                         createAlert("Pizza Made");
                     }
                     else {
@@ -221,8 +224,8 @@ public class specialtyFragment extends Fragment {
                     }
                     selectedPizzaSize = String.valueOf(size);
                     sizeSelected = true;
-                    extraSauce.setEnabled(true);
-                    extraCheese.setEnabled(true);
+                    extraSauce.setChecked(false);
+                    extraCheese.setChecked(false);
                     Price.setText("Price: " + String.format("%.2f", toMake.price()));
                 }
             }
@@ -253,11 +256,12 @@ public class specialtyFragment extends Fragment {
                 Price = view.findViewById(R.id.Price);
                 Price.setText("Price: " + String.format("%.2f", toMake.price()));
                 Spinner spinner = view.findViewById(R.id.mySpinner);
-                extraSauce.setEnabled(false);
                 extraSauce.setChecked(false);
-                extraCheese.setEnabled(false);
+                extraSauce.setEnabled(true);
                 extraCheese.setChecked(false);
-                sizeSelected = false;
+                extraCheese.setEnabled(true);
+                sizeSelected = true;
+                selectedPizzaSize = "S";
                 spinner.setEnabled(true);
             }
         });
