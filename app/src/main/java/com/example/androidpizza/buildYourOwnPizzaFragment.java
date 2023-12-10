@@ -527,6 +527,7 @@ public class buildYourOwnPizzaFragment extends Fragment {
                 Store.getInstance().getCurrentOrder().addToOrder(toMake);
                 createAlert("Pizza Made");
                 //clearitems(view);
+                //
                 if (!sizeSelected) {
                     Toast.makeText(getContext(), "size not selected", Toast.LENGTH_SHORT).show();
                     createAlert("No Size");
