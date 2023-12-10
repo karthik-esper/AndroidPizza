@@ -214,8 +214,8 @@
         android:id="@+id/Size"
         android:layout_width="55dp"
         android:layout_height="39dp"
-        android:layout_marginStart="276dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="164dp"
         android:ems="10"
         android:inputType="text"
         android:text="Size"
@@ -230,30 +230,10 @@
         android:layout_height="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintHorizontal_bias="0.795"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.369" />
-
-    <RadioButton
-        android:id="@+id/radioButton5"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="252dp"
-        android:layout_marginTop="248dp"
-        android:text="RadioButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioButton
-        android:id="@+id/radioButton6"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="252dp"
-        android:layout_marginTop="268dp"
-        android:text="RadioButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0.351" />
 
     <Button
         android:id="@+id/createPizza"
@@ -272,6 +252,26 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="268dp"
         android:text="Price: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/exCheese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="242dp"
+        android:layout_marginTop="203dp"
+        android:text="Extra Cheese"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/exSauce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="243dp"
+        android:layout_marginTop="247dp"
+        android:text="Extra Sauce"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
