@@ -314,6 +314,7 @@ public class buildYourOwnPizzaFragment extends Fragment {
                 Pizza toMake = createPizza("byop");
                 if(toppers.size() < MIN_TOPPING_SIZE) {
                     createAlert("Few Toppings");
+                    return;
                 }
                 assert toMake != null;
                 toMake.setToppings(new ArrayList<>(toppers));
