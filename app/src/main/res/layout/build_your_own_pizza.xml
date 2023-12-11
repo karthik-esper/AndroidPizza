@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -15,7 +14,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.809"
-        app:srcCompat="@drawable/byozza" />
+        app:srcCompat="@drawable/byozza"
+        android:contentDescription="@string/image_of_ingredients_for_build_your_own_pizza" />
 
     <TextView
         android:id="@+id/editTextText"
@@ -24,8 +24,7 @@
         android:layout_marginStart="84dp"
         android:layout_marginTop="76dp"
         android:ems="10"
-        android:inputType="text"
-        android:text="Toppings"
+        android:text="@string/toppings"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,8 +36,7 @@
         android:layout_height="70dp"
         android:layout_marginStart="4dp"
         android:ems="10"
-        android:inputType="text"
-        android:text="Build Your Own Pizza!"
+        android:text="@string/build_your_own_pizza"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textDirection="firstStrongRtl"
@@ -54,8 +52,7 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="76dp"
         android:ems="10"
-        android:inputType="text"
-        android:text="Sauce"
+        android:text="@string/sauce"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toEndOf="@+id/editTextText"
@@ -67,7 +64,7 @@
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="108dp"
-        android:text="Sausage"
+        android:text="@string/sausage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -76,7 +73,7 @@
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
-        android:text="Pepperoni"
+        android:text="@string/pepperoni"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sausage" />
 
@@ -86,7 +83,7 @@
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="148dp"
-        android:text="Ham"
+        android:text="@string/ham"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -95,7 +92,7 @@
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
-        android:text="Shrimp"
+        android:text="@string/shrimp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ham" />
 
@@ -105,7 +102,7 @@
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="188dp"
-        android:text="Squid"
+        android:text="@string/squid"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -114,7 +111,7 @@
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
-        android:text="Crab Meat"
+        android:text="@string/crab_meat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/squid" />
 
@@ -124,7 +121,7 @@
         android:layout_height="20dp"
         android:layout_marginStart="116dp"
         android:layout_marginTop="108dp"
-        android:text="Green Pepper"
+        android:text="@string/green_pepper"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -134,7 +131,7 @@
         android:layout_height="20dp"
         android:layout_marginStart="116dp"
         android:layout_marginTop="20dp"
-        android:text="Onion"
+        android:text="@string/onion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/green_pepper" />
 
@@ -144,7 +141,7 @@
         android:layout_height="20dp"
         android:layout_marginStart="116dp"
         android:layout_marginTop="148dp"
-        android:text="Mushroom"
+        android:text="@string/mushroom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -154,7 +151,7 @@
         android:layout_height="20dp"
         android:layout_marginStart="116dp"
         android:layout_marginTop="168dp"
-        android:text="Black Olive"
+        android:text="@string/black_olive"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -164,7 +161,7 @@
         android:layout_height="20dp"
         android:layout_marginStart="116dp"
         android:layout_marginTop="188dp"
-        android:text="Pineapple"
+        android:text="@string/pineapple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -174,7 +171,7 @@
         android:layout_height="20dp"
         android:layout_marginStart="116dp"
         android:layout_marginTop="208dp"
-        android:text="Jalapeno"
+        android:text="@string/jalapeno"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -184,7 +181,7 @@
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="228dp"
-        android:text="Beef"
+        android:text="@string/beef"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -201,13 +198,13 @@
             android:id="@+id/tomato"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:text="Tomato" />
+            android:text="@string/tomato" />
 
         <RadioButton
             android:id="@+id/alfredo"
             android:layout_width="100dp"
             android:layout_height="25dp"
-            android:text="Alfredo" />
+            android:text="@string/alfredo" />
     </RadioGroup>
 
     <TextView
@@ -217,8 +214,7 @@
         android:layout_marginStart="276dp"
         android:layout_marginTop="164dp"
         android:ems="10"
-        android:inputType="text"
-        android:text="Size"
+        android:text="@string/build_size_text"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
@@ -242,7 +238,7 @@
         android:layout_height="52dp"
         android:layout_marginStart="216dp"
         android:layout_marginTop="296dp"
-        android:text="Create Pizza!"
+        android:text="@string/create_pizza"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/editTextText2" />
 
@@ -252,7 +248,6 @@
         android:layout_height="32dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="268dp"
-        android:text="Price: "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -262,7 +257,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="242dp"
         android:layout_marginTop="203dp"
-        android:text="Extra Cheese"
+        android:text="@string/ex_cheese"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -272,7 +267,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="243dp"
         android:layout_marginTop="247dp"
-        android:text="Extra Sauce"
+        android:text="@string/ex_sauce"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

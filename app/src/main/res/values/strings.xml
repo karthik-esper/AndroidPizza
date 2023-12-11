@@ -27,6 +27,26 @@
 
     <string name="delete">Delete Order</string>
     <string name="orderList">Order Selector</string>
+    <string name="build_your_own_pizza">Build Your Own Pizza!</string>
+    <string name="sauce">Sauce</string>
+    <string name="sausage">Sausage</string>
+    <string name="pepperoni">Pepperoni</string>
+    <string name="ham">Ham</string>
+    <string name="shrimp">Shrimp</string>
+    <string name="squid">Squid</string>
+    <string name="crab_meat">Crab Meat</string>
+    <string name="green_pepper">Green Pepper</string>
+    <string name="onion">Onion</string>
+    <string name="mushroom">Mushroom</string>
+    <string name="black_olive">Black Olive</string>
+    <string name="pineapple">Pineapple</string>
+    <string name="jalapeno">Jalapeno</string>
+    <string name="beef">Beef</string>
+    <string name="tomato">Tomato</string>
+    <string name="alfredo">Alfredo</string>
+    <string name="build_size_text">Size</string>
+    <string name="create_pizza">Create Pizza</string>
+    <string name="image_of_ingredients_for_build_your_own_pizza">Image of ingredients for build your own pizza</string>
 
     <string-array name="spinner_sizes">
         <item>Small</item>
