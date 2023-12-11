@@ -47,6 +47,8 @@
     <string name="build_size_text">Size</string>
     <string name="create_pizza">Create Pizza</string>
     <string name="image_of_ingredients_for_build_your_own_pizza">Image of ingredients for build your own pizza</string>
+    <string name="pizza_name">Pizza Name</string>
+    <string name="pizza_description">Pizza Description</string>
 
     <string-array name="spinner_sizes">
         <item>Small</item>
